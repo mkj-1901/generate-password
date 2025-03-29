@@ -16,4 +16,4 @@ A simple ReactJS application to generate secure and customizable passwords.
 - JavaScript
 
 ## Checkout the site here
-https://generate-your-passwords.netlify.app/
+https://your-passwords.netlify.app/
