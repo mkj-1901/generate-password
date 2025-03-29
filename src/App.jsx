@@ -30,28 +30,32 @@ function App() {
   }, [password] )
   
   return (
-    <div className="bg-gray-900 text-white min-h-screen flex flex-col justify-start items-center">
-      <h1 className="text-4xl sm:text-5xl mt-8 text-center">Password Generator</h1> <br /><br />
-      <div className='bg-gray-800 text-center flex flex-col sm:flex-row rounded-xl mx-4 my-2 w-full max-w-md'>
-        <input type="text" value={password} className='outline-none w-full py-2 px-3 rounded-t-xl sm:rounded-t-none sm:rounded-l-xl' placeholder='password' readOnly ref={passwordRef} />
-        <button className='outline-none px-3 py-2 bg-blue-700 rounded-b-xl sm:rounded-b-none sm:rounded-r-xl shadow-md transition transform active:scale-95 hover:bg-blue-600' onClick={copyToClipboard}>Copy</button>
-      </div> <br />
-      <div className='flex flex-col sm:flex-row text-sm gap-y-4 sm:gap-y-0 sm:gap-x-2 bg-gray-800 rounded px-5 py-4 w-full max-w-md'>
-        <div className='flex items-center gap-x-1 px-3'>
-          <input type="range" min={6} max={20} value={length} className='cursor-pointer' onChange={(e) => { setLength(e.target.value) }} />
-          <label>Length : {length}</label>
-        </div>
-        <div className='flex items-center gap-x-1 px-3'>
-          <input type="checkbox" defaultChecked={numbers} id='numberInput' onChange={() => { setNumbers((prev) => !prev) }} />
-          <label htmlFor='numberInput'>Numbers Allowed</label>
-        </div>
-        <div className='flex items-center gap-x-1 px-3'>
-          <input type="checkbox" defaultChecked={characters} id='charInput' onChange={() => { setCharacters((prev) => !prev) }} />
-          <label htmlFor='charInput'>Special Characters Allowed</label>
+    <>
+    <div className="bg-gray-900 text-white min-h-screen flex flex-col justify-between">
+      <div className="flex flex-col justify-start items-center px-4">
+        <h1 className="text-4xl sm:text-5xl mt-8 text-center">Password Generator</h1> <br /><br />
+        <div className='bg-gray-800 text-center flex flex-col sm:flex-row rounded-xl mx-4 my-2 w-full max-w-md'>
+          <input type="text" value={password} className='outline-none w-full py-2 px-3 rounded-t-xl sm:rounded-t-none sm:rounded-l-xl' placeholder='password' readOnly ref={passwordRef} />
+          <button className='outline-none px-3 py-2 bg-blue-700 rounded-b-xl sm:rounded-b-none sm:rounded-r-xl shadow-md transition transform active:scale-95 hover:bg-blue-600' onClick={copyToClipboard}>Copy</button>
+        </div> <br />
+        <div className='flex flex-col sm:flex-row text-sm gap-y-4 sm:gap-y-0 sm:gap-x-2 bg-gray-800 rounded px-5 py-4 w-full max-w-md'>
+          <div className='flex items-center gap-x-1 px-3'>
+            <input type="range" min={6} max={20} value={length} className='cursor-pointer' onChange={(e) => { setLength(e.target.value) }} />
+            <label>Length : {length}</label>
+          </div>
+          <div className='flex items-center gap-x-1 px-3'>
+            <input type="checkbox" defaultChecked={numbers} id='numberInput' onChange={() => { setNumbers((prev) => !prev) }} />
+            <label htmlFor='numberInput'>Numbers Allowed</label>
+          </div>
+          <div className='flex items-center gap-x-1 px-3'>
+            <input type="checkbox" defaultChecked={characters} id='charInput' onChange={() => { setCharacters((prev) => !prev) }} />
+            <label htmlFor='charInput'>Special Characters Allowed</label>
+          </div>
         </div>
       </div>
       <Footer/>
     </div>
+    </>
   );
 }
 export default App
